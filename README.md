@@ -2,7 +2,7 @@
 
 A small, source-led publication surface for research notes, engineering observations, and governance commentary from [Poulin Systems](https://github.com/poulin-systems).
 
-**Publication status (October 10, 2026):** The source repository and first article are public after operator-approved PR #1. GitHub Pages is configured to publish the prebuilt `gh-pages` branch, but the website is **not yet verified live**: the organization disables GitHub Actions and Pages currently returns HTTP 404. Do not describe it as deployed until the live URL, article, and feed all respond successfully.
+**Publication status (October 10, 2026): LIVE.** The source repository and inaugural article are public following operator-approved PR #1. The GitHub Pages website uses the manually prebuilt `gh-pages` branch. Home, article, About, CSS, and Atom feed were independently fetched over HTTPS and each returned HTTP 200 with the expected content. Organization-wide GitHub Actions remains disabled; no policy relaxation was required.
 
 ## What this is
 
@@ -31,7 +31,7 @@ For an installed `jekyll` binary, `jekyll serve --baseurl /bulletin-board` also 
 
 ## Deployment without GitHub Actions
 
-Organization policy currently disables GitHub Actions, so the source's Jekyll/Liquid pages cannot be built by GitHub Pages. A **compiled static release** was committed on orphan branch `gh-pages` (release commit `463a4c0`), with `.nojekyll`, pre-rendered article pages, a feed, and build provenance. Pages points to `gh-pages:/`. This staging workaround has **not yet yielded a live website**; a qualified organization admin must first resolve the Actions deployment restriction.
+Organization policy currently disables GitHub Actions, so the source's Jekyll/Liquid pages cannot be built by GitHub Pages. A **compiled static release** was committed on orphan branch `gh-pages` (release commit `463a4c0`), with `.nojekyll`, pre-rendered article pages, a feed, and build provenance. Pages points to `gh-pages:/`. The static `.nojekyll` publishing route succeeded while organization-wide Actions remained disabled. The live pages and feed were verified by HTTP and content checks.
 
 The generator is `scripts/build_static.py` (Python 3 plus PyYAML). It refuses nonempty output and never pushes or changes Pages:
 
@@ -40,8 +40,8 @@ python3 -B scripts/validate.py
 python3 -B scripts/build_static.py /absolute/new/empty/output-directory
 ```
 
-Inspect the produced HTML, links, CSS, Atom feed, source commit provenance, and `.nojekyll` before an independently approved push of those files to `gh-pages`. Rebuild after content changes; merging to `main` **does not automatically deploy** while Actions remains disabled. Do not treat a queued Pages build request as successful deployment.
+Inspect the produced HTML, links, CSS, Atom feed, source commit provenance, and `.nojekyll` before an independently approved push of those files to `gh-pages`. Rebuild after content changes; merging to `main` **does not automatically deploy** while Actions remains disabled. Do not treat a queued Pages build request as successful deployment. A deployment is accepted only after verifying the actual public homepage, article, CSS and Atom feed.
 
-Intended public website: `https://poulin-systems.github.io/bulletin-board/`. Public editorial source: [first bulletin](_posts/2026-10-10-the-other-half-of-ai-safety-is-us.md).
+Verified public website: https://poulin-systems.github.io/bulletin-board/. Public editorial source: [first bulletin](_posts/2026-10-10-the-other-half-of-ai-safety-is-us.md).
 
 © 2026 Poulin Systems. No reuse license is granted by this repository unless explicitly stated.

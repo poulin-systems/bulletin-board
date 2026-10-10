@@ -1,6 +1,6 @@
 # Publication protocol
 
-**Stage (October 10, 2026):** operator-approved public source; website deployment pending external GitHub Actions organization policy. Public source is not proof that the website and feed are live. Future content and release changes still require human acceptance.
+**Stage (October 10, 2026): LIVE.** Operator-approved public source and Pages release were verified over HTTPS (homepage, article, feed, CSS, and About). Future content and release changes still require human acceptance.
 
 ## Non-negotiable gates
 
@@ -39,6 +39,6 @@ Opinion is labeled as opinion. This board does not speak for referenced organiza
 - Public repo and prebuilt `gh-pages` branch verified; Pages configured for `gh-pages:/`.
 - Organization-wide new-Pages-creation prohibition restored after site configuration.
 - Organization-wide Actions prohibition remains intact; repo-level activation is rejected by GitHub.
-- Live website, article URL, and Atom feed returned HTTP 404. **Not live.**
-- Remedy: organization owner enables Actions for the **selected `bulletin-board` repository**, allowing GitHub-owned deployment actions, and Pages deployment is retriggered. Independently verify all three public URLs before claiming completion.
-- A no-Jekyll prebuilt branch is committed for reuse, but GitHub may still require Actions for the final deployment.
+- Live website, article URL, Atom feed, CSS, and About were subsequently verified with HTTP 200 and expected content. **Live.**
+- No Actions policy change required. The static `.nojekyll` branch completed deployment despite the disabled Actions setting. For future releases, independently verify all public URLs and content again.
+- A no-Jekyll prebuilt branch is committed for reuse. Keep the generator, provenance, and manual release gate in place; do not assume future content merged to `main` is automatically deployed.

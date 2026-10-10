@@ -1,0 +1,27 @@
+---
+layout: default
+title: Bulletins
+description: Public notes on AI governance, engineering practice, and decisions grounded in sources.
+---
+<section class="hero">
+  <p class="kicker">POULIN SYSTEMS / PUBLIC NOTES</p>
+  <h1>Ideas worth examining.<br><em>Evidence worth keeping.</em></h1>
+  <p>Research notes, engineering observations, and responsible-AI commentary from an independent builder's perspective. Facts, interpretation, and unresolved questions belong in different sentences.</p>
+</section>
+<section class="board" aria-labelledby="latest-title">
+  <div class="section-heading"><h2 id="latest-title">Latest bulletins</h2><span>{{ site.posts.size }} posted</span></div>
+  {% for post in site.posts %}
+    <article class="bulletin">
+      <div class="bulletin-top"><span class="category">{{ post.category | escape }}</span><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time></div>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+      <p>{{ post.summary | escape }}</p>
+      <a class="read-more" href="{{ post.url | relative_url }}" aria-label="Read {{ post.title | escape }}">Read bulletin <span aria-hidden="true">↗</span></a>
+    </article>
+  {% else %}
+    <p>No published bulletins yet.</p>
+  {% endfor %}
+</section>
+<section class="about-strip">
+  <div><strong>Public thinking, accountable writing.</strong><p>We link to original sources, identify our interpretations, and correct mistakes. We do not publish private infrastructure details here.</p></div>
+  <a href="{{ '/about/' | relative_url }}">How we publish ↗</a>
+</section>

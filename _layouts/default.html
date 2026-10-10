@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="{{ page.description | default: site.description | escape }}">
+  <meta name="theme-color" content="#111e2d">
+  <title>{% if page.title %}{{ page.title | escape }} · {% endif %}{{ site.title | escape }}</title>
+  <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
+  <link rel="alternate" type="application/atom+xml" href="{{ '/feed.xml' | absolute_url }}" title="Poulin Systems Bulletin Board">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap masthead">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <span class="brand-mark">P<span class="brand-dot">.</span>S</span>
+        <span><strong>Poulin Systems</strong><small>Bulletin Board</small></span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="{{ '/' | relative_url }}">Bulletins</a>
+        <a href="{{ '/about/' | relative_url }}">About</a>
+        <a href="{{ '/feed.xml' | relative_url }}">Feed ↗</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="wrap main-content">
+    {{ content }}
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© {{ site.time | date: '%Y' }} Poulin Systems · Evidence first. People accountable.</p>
+      <p><a href="{{ '/about/' | relative_url }}">Editorial policy</a> · <a href="https://github.com/poulin-systems">GitHub organization ↗</a></p>
+    </div>
+  </footer>
+</body>
+</html>

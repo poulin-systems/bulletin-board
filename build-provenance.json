@@ -1,0 +1,6 @@
+{
+  "source": "poulin-systems/bulletin-board",
+  "source_commit": "a3e8605ccc7d4c24b4def276f90e7fb217a6a851",
+  "generator": "scripts/build_static.py",
+  "note": "Static deploy with .nojekyll because organization Actions policy is disabled."
+}

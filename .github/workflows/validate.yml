@@ -1,0 +1,14 @@
+name: Validate bulletin board
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout candidate
+        uses: actions/checkout@v4
+      - name: Run deterministic publication checks
+        run: python3 scripts/validate.py

@@ -1,0 +1,13 @@
+title: Poulin Systems Bulletin Board
+description: Sourced notes on practical engineering, responsible AI, and accountable systems.
+url: "https://poulin-systems.github.io"
+baseurl: "/bulletin-board"
+timezone: America/Detroit
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+exclude:
+  - README.md
+  - PUBLICATION.md
+  - scripts
+  - Gemfile
+  - Gemfile.lock

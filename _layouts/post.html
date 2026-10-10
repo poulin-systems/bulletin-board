@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<article class="post">
+  <div class="eyebrow"><a href="{{ '/' | relative_url }}">← All bulletins</a> <span class="separator">/</span> {{ page.category | escape }}</div>
+  <header class="post-head">
+    <p class="post-date"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time> · {{ page.author | escape }}</p>
+    <h1>{{ page.title | escape }}</h1>
+    <p class="lede">{{ page.summary | escape }}</p>
+  </header>
+  <div class="article-body">{{ content }}</div>
+  <aside class="editorial-note" aria-label="Editorial information">
+    <strong>Editorial note</strong>
+    <p>This is Poulin Systems commentary, not a statement from the organizations referenced. The source and our interpretation are distinguished in the text. Prepared with AI drafting assistance; factual and publication responsibility remains with the human publisher.</p>
+  </aside>
+  <p class="back-link"><a href="{{ '/' | relative_url }}">← Return to bulletin board</a></p>
+</article>
